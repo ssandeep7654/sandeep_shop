@@ -1,0 +1,26 @@
+<div class="row grow w-100">
+    <div class="col-12 bg-primary py-3">
+        <h2>Shopping Carts</h2>
+    </div>
+    <div class="col-2"></div>
+    <div class="main col-8 h-100 py-3">
+      <h3>My Carts</h3>
+      <table class="table table-striped">
+        <thead>
+          <tr>
+            <th scope="col"></th>
+          </tr>
+        </thead>
+        <tbody>
+          <% @carts.each do |cart| %>
+            <tr>
+              <th>
+                <%= link_to "#{cart.number}", cart_path(cart) %>
+              </th>
+            </tr>
+          <% end %>
+        </tbody>
+      </table>
+    </div>
+    <div class="col-2"></div>
+</div>

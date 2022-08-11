@@ -1,0 +1,69 @@
+<div class="row grow w-100">
+    <div class="col-12 bg-primary py-3">
+        <h2>Shopping Carts</h2>
+    </div>
+    <div class="col-1"></div>
+    <div class="main col-10 h-100 py-3">
+      <h3><%= @cart.title %></h3>
+      <h4>Items</h4>
+      <table class="table">
+        <thead>
+          <tr>
+            <th scope="col">Item</th>
+            <th scope="col">Image</th>
+            <th scope="col">Quantaty</th>
+            <th scope="col">Price</th>
+            <th scope="col">Subtotal</th>
+          </tr>
+        </thead>
+        <tbody>
+          <% @total = 0 %>
+          <% @cart.items.each do |item| %>
+            <tr class="" id="update_item_attr_<%= item.id %>">
+              <%= render 'item', item: item %>
+            </tr>
+            <% @total = @total + (item.quantity * item.price) %>
+          <% end %>
+        </tbody>
+      </table>
+    </div>
+    <div class="col-1"></div>
+</div>
+<div class="row">
+  <div class="col-1"></div>
+  <div class="col-8">
+    <span><b>Total: </b></span><span id="update_total_amount"><%= @total %></span><br>
+    <%= link_to "Delete Cart", cart_path(@cart), method: :delete, data: { confirm: "Are you sure, you want to delete the cart?"}, class: "btn btn-xs btn-danger" %>
+  </div>
+</div>
+
+<script>
+  function increaseItemQuantity(item_id){
+    $.ajax({
+      url: "/increase_quantity",
+      type: 'GET',
+      data: { item_id: item_id }
+    })
+  }
+
+  function decreaseItemQuantity(item_id){
+    $.ajax({
+      url: "/decrease_quantity",
+      type: 'GET',
+      data: { item_id: item_id }
+    })
+  }
+
+  function removeItemFromCart(item_id){
+    var result = confirm("Are you sure, you want to remove this item?");
+    if (result) {
+      $.ajax({
+        url: "/remove_item",
+        type: 'GET',
+        data: { item_id: item_id }
+      })
+    } else {
+      return false
+    }
+  }
+</script>
