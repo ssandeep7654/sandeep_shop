@@ -1,26 +1,31 @@
-<div class="row grow w-100">
-    <div class="col-12 bg-primary py-3">
-        <h2>Shopping Carts</h2>
+<main>
+    <div class="container-fluid px-4">
+        <h1 class="mt-4">My Carts</h1>
+        <ol class="breadcrumb mb-4">
+        </ol>
+        <div class="card mb-4">
+            <div class="card-header">
+                <i class="fas fa-table me-1"></i>
+                Shopping carts
+            </div>
+            <div class="card-body">
+                <table id="datatablesSimple">
+                    <thead>
+                        <tr>
+                            <th>Cart Number</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                      <% @carts.each do |cart| %>
+                      <tr>
+                        <td>
+                          <%= link_to "#{cart.number}", cart_path(cart) %>
+                        </td>
+                      </tr>
+                      <% end %>
+                    </tbody>
+                </table>
+            </div>
+        </div>
     </div>
-    <div class="col-2"></div>
-    <div class="main col-8 h-100 py-3">
-      <h3>My Carts</h3>
-      <table class="table table-striped">
-        <thead>
-          <tr>
-            <th scope="col"></th>
-          </tr>
-        </thead>
-        <tbody>
-          <% @carts.each do |cart| %>
-            <tr>
-              <th>
-                <%= link_to "#{cart.number}", cart_path(cart) %>
-              </th>
-            </tr>
-          <% end %>
-        </tbody>
-      </table>
-    </div>
-    <div class="col-2"></div>
-</div>
+</main>

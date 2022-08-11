@@ -7,3 +7,4 @@ window.jQuery = jquery
 window.$ = jquery
 
 import "packs/scripts"
+import "packs/datatables-simple-demo"

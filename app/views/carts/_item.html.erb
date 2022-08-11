@@ -1,12 +1,12 @@
-<th><%= item.title %></th>
-<th><%= image_tag("#{item.img}", height: 100, width: 100) %></th>
-<th>
-  <%= item.quantity %><br>
-  <button type="button" name="button" onclick="increaseItemQuantity('<%= item.id %>')">Increase Quantity</button>
-  <button type="button" name="button" onclick="decreaseItemQuantity('<%= item.id %>')">Decrease Quantity</button>
-</th>
-<th><%= item.price %></th>
-<th>
-  <%= item.quantity * item.price %><br>
-  <button type="button" name="button" onclick="removeItemFromCart('<%= item.id %>')">Remove Item</button>
-</th>
+<td><%= item.title %></td>
+<td><%= image_tag("#{item.img}", height: 100, width: 100) %></td>
+<td>
+  <span class="mr-1"><%= item.quantity %></span>
+  <i class="fa fa-plus-circle mr-1" onclick="increaseItemQuantity('<%= item.id %>')"></i>
+  <i class="fa fa-minus-circle" onclick="decreaseItemQuantity('<%= item.id %>')"></i>
+</td>
+<td><%= item.price %></td>
+<td>
+  <span class="mr-1"><%= item.quantity * item.price %></span>
+  <i class="fa fa-trash" onclick="removeItemFromCart('<%= item.id %>')"></i>
+</td>

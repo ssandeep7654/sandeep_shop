@@ -2,7 +2,6 @@
 <html lang="en">
     <head>
         <title>Sandeep Shop</title>
-        <title>Sandeep Shop</title>
 
         <%= csrf_meta_tags %>
         <%= csp_meta_tag %>
@@ -17,15 +16,12 @@
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
         <script src="https://cdn.jsdelivr.net/npm/simple-datatables@latest" crossorigin="anonymous"></script>
     </head>
-    <body>
-        <%= render 'layouts/header' %>
-        <div id="layoutSidenav">
-            <%= render 'layouts/side_nav' %>
-            <div id="layoutSidenav_content">
-              <%= yield %>
-              <p class="notice"><%= notice %></p>
-              <p class="alert"><%= alert %></p>
+    <body class="bg-primary">
+        <div id="layoutAuthentication">
+            <div id="layoutAuthentication_content">
+                <%= yield %>
             </div>
+            <%= render "/shared/login_footer" %>
         </div>
     </body>
 </html>

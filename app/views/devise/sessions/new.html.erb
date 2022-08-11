@@ -1,62 +1,42 @@
-<!DOCTYPE html>
-<html lang="en">
-    <head>
-        <meta charset="utf-8" />
-        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-        <meta name="description" content="" />
-        <meta name="author" content="" />
-        <title>Login - Sandeep Shop</title>
-        <link href="css/styles.css" rel="stylesheet" />
-        <script src="https://use.fontawesome.com/releases/v6.1.0/js/all.js" crossorigin="anonymous"></script>
-    </head>
-<body class="bg-primary">
-<div id="layoutAuthentication">
-  <div id="layoutAuthentication_content">
-    <main>
-      <div class="container">
-        <div class="row justify-content-center">
-          <div class="col-lg-5">
-            <div class="card shadow-lg border-0 rounded-lg mt-5">
-              <div class="card-header"><h3 class="text-center font-weight-light my-4">Login</h3></div>
-                <div class="card-body">
-                  <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-                    <div class="form-floating mb-3">
-                      <%= f.email_field :email, id: "inputEmail", class: "form-control", autofocus: true, autocomplete: "email", placeholder: "name@example.com" %>
-                      <%= f.label :email, for: "inputEmail" %>
-                        </div>
-                        <div class="form-floating mb-3">
-                          <%= f.password_field :password, autocomplete: "current-password", class: "form-control", id: "inputPassword", placeholder: "Password" %>
-                          <%= f.label :password, for: "inputPassword" %>
-                        </div>
-                        <% if devise_mapping.rememberable? %>
-                          <div class="form-check mb-3">
-                            <%= f.check_box :remember_me, class: "form-check-input", id: "inputRememberPassword" %>
-                            <%= f.label :remember_me, class: "form-check-label", for: "inputRememberPassword" %>
-                          </div>
-                        <% end %>
-                        <div class="d-flex align-items-center justify-content-between mt-4 mb-0">
-                          <%- if devise_mapping.recoverable? && controller_name != 'passwords' && controller_name != 'registrations' %>
-                            <%= link_to "Forgot password?", new_password_path(resource_name), class: "small" %><br />
-                          <% end %>
-                          <%= f.submit "Log in", class: "btn btn-primary" %>
-                        </div>
-                     <% end %>
-                  </div>
-                  <div class="card-footer text-center py-3">
-                    <div class="small">
-                       <%- if devise_mapping.registerable? && controller_name != 'registrations' %>
-                         <%= link_to "Sign up", new_registration_path(resource_name) %><br />
-                       <% end %>
+<main>
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-lg-5">
+        <div class="card shadow-lg border-0 rounded-lg mt-5">
+          <div class="card-header"><h3 class="text-center font-weight-light my-4">Login</h3></div>
+            <div class="card-body">
+              <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+                <div class="form-floating mb-3">
+                  <%= f.email_field :email, id: "inputEmail", class: "form-control", autofocus: true, autocomplete: "email", placeholder: "name@example.com" %>
+                  <%= f.label :email, for: "inputEmail" %>
                     </div>
-                  </div>
+                    <div class="form-floating mb-3">
+                      <%= f.password_field :password, autocomplete: "current-password", class: "form-control", id: "inputPassword", placeholder: "Password" %>
+                      <%= f.label :password, for: "inputPassword" %>
+                    </div>
+                    <% if devise_mapping.rememberable? %>
+                      <div class="form-check mb-3">
+                        <%= f.check_box :remember_me, class: "form-check-input", id: "inputRememberPassword" %>
+                        <%= f.label :remember_me, class: "form-check-label", for: "inputRememberPassword" %>
+                      </div>
+                    <% end %>
+                    <div class="d-flex align-items-center justify-content-between mt-4 mb-0">
+                      <%- if devise_mapping.recoverable? && controller_name != 'passwords' && controller_name != 'registrations' %>
+                        <%= link_to "Forgot password?", new_password_path(resource_name), class: "small" %><br />
+                      <% end %>
+                      <%= f.submit "Log in", class: "btn btn-primary" %>
+                    </div>
+                 <% end %>
+              </div>
+              <div class="card-footer text-center py-3">
+                <div class="small">
+                   <%- if devise_mapping.registerable? && controller_name != 'registrations' %>
+                     <%= link_to "Sign up", new_registration_path(resource_name) %><br />
+                   <% end %>
                 </div>
-             </div>
-          </div>
-       </div>
-    </main>
-</div>
-<%= render "/shared/login_footer" %>
-</div>
-</body>
-</html>
+              </div>
+            </div>
+         </div>
+      </div>
+   </div>
+</main>
