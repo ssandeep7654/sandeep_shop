@@ -1,5 +1,5 @@
 Arguments: 
-  /opt/homebrew/Cellar/node/18.7.0/bin/node /opt/homebrew/bin/yarn
+  /opt/homebrew/Cellar/node/18.7.0/bin/node /opt/homebrew/bin/yarn install
 
 PATH: 
   /Users/sandeepsingh/.rvm/gems/ruby-3.0.0/bin:/Users/sandeepsingh/.rvm/gems/ruby-3.0.0@global/bin:/Users/sandeepsingh/.rvm/rubies/ruby-3.0.0/bin:/Users/sandeepsingh/.rvm/bin:/usr/local/opt/libpq/bin:/opt/homebrew/bin:/opt/homebrew/sbin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin
