@@ -69,6 +69,16 @@ group :development do
   gem 'pry'
 end
 
+group :development, :deploy do
+  gem 'capistrano', '~> 3.14', require: false
+  gem 'capistrano-faster-assets'
+  gem 'capistrano-passenger'
+  gem 'capistrano-rails', '~> 1.6', require: false
+  gem 'capistrano-rake', require: false
+  gem 'capistrano-rvm'
+  gem 'capistrano-resque', require: false
+end
+
 group :test do
   # Use system testing [https://guides.rubyonrails.org/testing.html#system-testing]
   gem "capybara"
