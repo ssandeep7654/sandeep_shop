@@ -16,6 +16,7 @@
     "yarn": "<=1.22.19"
   },
   "scripts": {
+    "start": "webpack-dev-server --mode development",
     "build:css": "sass ./app/assets/stylesheets/application.bootstrap.scss:./app/assets/builds/application.css --no-source-map --load-path=node_modules"
   }
 }
