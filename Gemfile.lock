@@ -189,6 +189,8 @@ GEM
     nio4r (2.5.8)
     nokogiri (1.13.8-arm64-darwin)
       racc (~> 1.4)
+    nokogiri (1.13.8-x86_64-linux)
+      racc (~> 1.4)
     orm_adapter (0.5.0)
     pg (1.4.3)
     pry (0.14.1)
@@ -232,8 +234,8 @@ GEM
       zeitwerk (~> 2.5)
     rake (13.0.6)
     redis (4.7.1)
-    redis-namespace (1.9.0)
-      redis (>= 4)
+    redis-namespace (1.8.2)
+      redis (>= 3.0.4)
     regexp_parser (2.5.0)
     reline (0.3.1)
       io-console (~> 0.5)
@@ -310,6 +312,7 @@ GEM
 
 PLATFORMS
   arm64-darwin-20
+  x86_64-linux
 
 DEPENDENCIES
   bootsnap
